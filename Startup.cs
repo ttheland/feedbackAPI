@@ -29,6 +29,7 @@ namespace feedbackAPI
         {
 
             services.AddSingleton<IPersonsRepository, InMemFeedbackRepository>();
+            services.AddSingleton<IProjectsRepository, InMemFeedbackRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
