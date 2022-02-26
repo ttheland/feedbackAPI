@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using feedbackAPI.Entities;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace feedbackAPI.Repositories
@@ -13,6 +14,9 @@ namespace feedbackAPI.Repositories
 
         private readonly IMongoCollection<Person> personsCollection;
         private readonly IMongoCollection<Project> projectsCollection;
+
+        private readonly FilterDefinitionBuilder<Person> personFilterBuilder = Builders<Person>.Filter;
+        private readonly FilterDefinitionBuilder<Project> projectFilterBuilder = Builders<Project>.Filter;
 
         public MongoDBRepository(IMongoClient mongoClient)
         {
@@ -34,7 +38,8 @@ namespace feedbackAPI.Repositories
 
         public void DeletePerson(Guid id)
         {
-            throw new NotImplementedException();
+            var filter = personFilterBuilder.Eq(person => person.Id, id);
+            personsCollection.DeleteOne(filter);
         }
 
         public void DeleteProject(Guid id)
@@ -44,12 +49,13 @@ namespace feedbackAPI.Repositories
 
         public Person getPerson(Guid id)
         {
-            throw new NotImplementedException();
+            var filter = personFilterBuilder.Eq(person => person.Id, id);
+            return personsCollection.Find(filter).SingleOrDefault();
         }
 
         public IEnumerable<Person> GetPersons()
         {
-            throw new NotImplementedException();
+            return personsCollection.Find(new BsonDocument()).ToList();
         }
 
         public Project getProject(Guid id)
@@ -64,7 +70,8 @@ namespace feedbackAPI.Repositories
 
         public void UpdatePerson(Person person)
         {
-            throw new NotImplementedException();
+            var filter = personFilterBuilder.Eq(existingPerson => existingPerson.Id, person.Id);
+            personsCollection.ReplaceOne(filter, person);
         }
 
         public void UpdateProject(Project project)

@@ -14,6 +14,9 @@ using Microsoft.OpenApi.Models;
 using feedbackAPI.Repositories;
 using MongoDB.Driver;
 using feedbackAPI.Settings;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Serializers;
 
 namespace feedbackAPI
 {
@@ -30,14 +33,17 @@ namespace feedbackAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
+            BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
+            BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
+
             services.AddSingleton<IMongoClient>(serviceProvider =>
             {
                 var settings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
                 return new MongoClient(settings.ConnectionString);
             });
 
-            services.AddSingleton<IPersonsRepository, InMemFeedbackRepository>();
-            services.AddSingleton<IProjectsRepository, InMemFeedbackRepository>();
+            services.AddSingleton<IPersonsRepository, MongoDBRepository>();
+            services.AddSingleton<IProjectsRepository, MongoDBRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
