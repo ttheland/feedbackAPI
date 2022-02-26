@@ -44,7 +44,9 @@ namespace feedbackAPI
 
             services.AddSingleton<IPersonsRepository, MongoDBRepository>();
             services.AddSingleton<IProjectsRepository, MongoDBRepository>();
-            services.AddControllers();
+            services.AddControllers(options => {
+                options.SuppressAsyncSuffixInActionNames = false;
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "feedbackAPI", Version = "v1" });

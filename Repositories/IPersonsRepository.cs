@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using feedbackAPI.Entities;
 
 namespace feedbackAPI.Repositories
@@ -7,14 +8,14 @@ namespace feedbackAPI.Repositories
     // Interface for PersonsRepository
     public interface IPersonsRepository
     {
-        Person getPerson(Guid id);
-        IEnumerable<Person> GetPersons();
+        Task<Person> getPersonAsync(Guid id);
+        Task<IEnumerable<Person>> GetPersonsAsync();
 
-        void CreatePerson(Person person);
+        Task CreatePersonAsync(Person person);
 
-        void UpdatePerson(Person person);
+        Task UpdatePersonAsync(Person person);
 
-        void DeletePerson(Guid id);
+        Task DeletePersonAsync(Guid id);
 
     }
 }

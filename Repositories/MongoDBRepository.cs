@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using feedbackAPI.Entities;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -26,9 +27,9 @@ namespace feedbackAPI.Repositories
 
         }
 
-        public void CreatePerson(Person person)
+        public async Task CreatePersonAsync(Person person)
         {
-            personsCollection.InsertOne(person);
+            await personsCollection.InsertOneAsync(person);
         }
 
         public void CreateProject(Project project)
@@ -36,10 +37,10 @@ namespace feedbackAPI.Repositories
             throw new NotImplementedException();
         }
 
-        public void DeletePerson(Guid id)
+        public async Task DeletePersonAsync(Guid id)
         {
             var filter = personFilterBuilder.Eq(person => person.Id, id);
-            personsCollection.DeleteOne(filter);
+            await personsCollection.DeleteOneAsync(filter);
         }
 
         public void DeleteProject(Guid id)
@@ -47,15 +48,15 @@ namespace feedbackAPI.Repositories
             throw new NotImplementedException();
         }
 
-        public Person getPerson(Guid id)
+        public async Task<Person> getPersonAsync(Guid id)
         {
             var filter = personFilterBuilder.Eq(person => person.Id, id);
-            return personsCollection.Find(filter).SingleOrDefault();
+            return await personsCollection.Find(filter).SingleOrDefaultAsync();
         }
 
-        public IEnumerable<Person> GetPersons()
+        public async Task<IEnumerable<Person>> GetPersonsAsync()
         {
-            return personsCollection.Find(new BsonDocument()).ToList();
+            return await personsCollection.Find(new BsonDocument()).ToListAsync();
         }
 
         public Project getProject(Guid id)
@@ -68,10 +69,10 @@ namespace feedbackAPI.Repositories
             throw new NotImplementedException();
         }
 
-        public void UpdatePerson(Person person)
+        public async Task UpdatePersonAsync(Person person)
         {
             var filter = personFilterBuilder.Eq(existingPerson => existingPerson.Id, person.Id);
-            personsCollection.ReplaceOne(filter, person);
+            await personsCollection.ReplaceOneAsync(filter, person);
         }
 
         public void UpdateProject(Project project)

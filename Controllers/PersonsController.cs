@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using feedbackAPI.DTOs;
-
+using System.Threading.Tasks;
 
 namespace feedbackAPI.Controllers
 {
@@ -23,17 +23,18 @@ namespace feedbackAPI.Controllers
         // Routes
         // GET /persons
         [HttpGet]
-        public IEnumerable<PersonDTO> GetPersons()
+        public async Task<IEnumerable<PersonDTO>> GetPersonsAsync()
         {
-            var persons = repository.GetPersons().Select(person => person.AsDto());
+            var persons = (await repository.GetPersonsAsync())
+                    .Select(person => person.AsDto());
             return persons;
         }
 
         // GET /persons/{id}
         [HttpGet("{id}")]
-        public ActionResult<PersonDTO> GetPerson(Guid id)
+        public async Task<ActionResult<PersonDTO>> GetPersonAsync(Guid id)
         {
-            var person = repository.getPerson(id);
+            var person = await repository.getPersonAsync(id);
 
             if (person is null)
             {
@@ -45,7 +46,7 @@ namespace feedbackAPI.Controllers
 
         // POST /persons
         [HttpPost]
-        public ActionResult<PersonDTO> CreatePerson(CreatePersonDTO personDTO)
+        public async Task<ActionResult<PersonDTO>> CreatePersonAsync(CreatePersonDTO personDTO)
         {
             Person person = new()
             {
@@ -56,17 +57,17 @@ namespace feedbackAPI.Controllers
                 CreatedDate = DateTimeOffset.UtcNow
             };
 
-            repository.CreatePerson(person);
+            await repository.CreatePersonAsync(person);
 
-            return CreatedAtAction(nameof(GetPerson), new {id = person.Id}, person.AsDto());
+            return CreatedAtAction(nameof(GetPersonAsync), new {id = person.Id}, person.AsDto());
 
         }
 
         // PUT /persons/{id}
         [HttpPut("{id}")]
-        public ActionResult UpdatePerson(Guid id, UpdatePersonDTO personDTO )
+        public async Task<ActionResult> UpdatePersonAsync(Guid id, UpdatePersonDTO personDTO )
         {
-            var existingPerson = repository.getPerson(id);
+            var existingPerson = await repository.getPersonAsync(id);
 
             if (existingPerson is null)
             {
@@ -80,23 +81,23 @@ namespace feedbackAPI.Controllers
                 Projects = personDTO.Projects
             };
 
-            repository.UpdatePerson(updatePerson);
+            await repository.UpdatePersonAsync(updatePerson);
 
             return NoContent();
         }
 
         // DEL /persons/{id}
         [HttpDelete("{id}")]
-        public ActionResult DeletePerson(Guid id)
+        public async Task<ActionResult> DeletePersonAsync(Guid id)
         {
-            var existingPerson = repository.getPerson(id);
+            var existingPerson = await repository.getPersonAsync(id);
 
             if (existingPerson is null)
             {
                 return NotFound();
             }
 
-            repository.DeletePerson(id);
+            await repository.DeletePersonAsync(id);
 
             return NoContent();
         }

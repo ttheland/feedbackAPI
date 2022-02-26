@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using feedbackAPI.Entities;
 
 namespace feedbackAPI.Repositories
@@ -20,31 +21,35 @@ namespace feedbackAPI.Repositories
             new Project { Id = Guid.NewGuid(), Name = "Houston", Manager = null, CreatedDate = DateTimeOffset.UtcNow }
         };
 
-        public IEnumerable<Person> GetPersons()
+        public async Task<IEnumerable<Person>> GetPersonsAsync()
         {
-            return persons;
+            return await Task.FromResult(persons);
         }
 
-        public Person getPerson(Guid id)
+        public async Task<Person> getPersonAsync(Guid id)
         {
-            return persons.Where(person => person.Id == id).SingleOrDefault();
+            var person = persons.Where(person => person.Id == id).SingleOrDefault();
+            return await Task.FromResult(person);
         }
 
-        public void CreatePerson(Person person)
+        public async Task CreatePersonAsync(Person person)
         {
             persons.Add(person);
+            await Task.CompletedTask;
         }
 
-        public void UpdatePerson(Person person)
+        public async Task UpdatePersonAsync(Person person)
         {
             var index = persons.FindIndex(existingPerson => existingPerson.Id == person.Id);
             persons[index] = person;
+            await Task.CompletedTask;
         }
 
-        public void DeletePerson(Guid id)
+        public async Task DeletePersonAsync(Guid id)
         {
             var index = persons.FindIndex(existingPerson => existingPerson.Id == id);
             persons.RemoveAt(index);
+            await Task.CompletedTask;
         }
 
 
