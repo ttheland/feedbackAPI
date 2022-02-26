@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using feedbackAPI.Repositories;
+using MongoDB.Driver;
+using feedbackAPI.Settings;
 
 namespace feedbackAPI
 {
@@ -27,6 +29,12 @@ namespace feedbackAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddSingleton<IMongoClient>(serviceProvider =>
+            {
+                var settings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
+                return new MongoClient(settings.ConnectionString);
+            });
 
             services.AddSingleton<IPersonsRepository, InMemFeedbackRepository>();
             services.AddSingleton<IProjectsRepository, InMemFeedbackRepository>();
