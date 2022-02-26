@@ -127,3 +127,6 @@ C:\Users\tomas\Documents\setit\feedbackAPI\Feedback.UnitTests\bin\Debug\net5.0\r
 C:\Users\tomas\Documents\setit\feedbackAPI\Feedback.UnitTests\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
 C:\Users\tomas\Documents\setit\feedbackAPI\Feedback.UnitTests\bin\Debug\net5.0\Feedback.Api.dll
 C:\Users\tomas\Documents\setit\feedbackAPI\Feedback.UnitTests\bin\Debug\net5.0\Feedback.Api.pdb
+C:\Users\tomas\Documents\setit\feedbackAPI\Feedback.UnitTests\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\tomas\Documents\setit\feedbackAPI\Feedback.UnitTests\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\tomas\Documents\setit\feedbackAPI\Feedback.UnitTests\bin\Debug\net5.0\Moq.dll
