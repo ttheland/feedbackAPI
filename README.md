@@ -10,7 +10,7 @@ to run the Docker container (from dockerhub): In VSCode terminal: `docker run -i
 
 As usual when running locally, the SwaggerUI API documentation is available at `https://localhost:5001/swagger/index.html` OR `http://localhost:5000`.
 
-Tested with Postman.
+Tested with Postman, unit testing using Xunit.
 
 This work is based on Julio Casal's wonderful [.NET 5 REST API Tutorial - Build From Scratch With C#](https://youtu.be/ZXdFisA_hOY)
 
