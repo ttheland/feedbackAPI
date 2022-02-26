@@ -6,9 +6,9 @@ This example API made for demonstration purposes is for collecting person-projec
 
 Project is configured to run from VSCode with one press of `f5`.
 
-to run the Docker container: In VSCode terminal: `docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo`
+to run the Docker container (from dockerhub): In VSCode terminal: `docker run -it --rm -p 8080:80 -e MongoDbSettings:Host=mongo --network=feedbackapidemo ttheland/feedbackapi:v1`
 
-As usual when running, the SwaggerUI API documentation is available at `http://localhost:5001/swagger/index.html`
+As usual when running locally, the SwaggerUI API documentation is available at `https://localhost:5001/swagger/index.html` OR `http://localhost:5000`.
 
 Tested with Postman.
 
