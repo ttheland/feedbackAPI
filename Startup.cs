@@ -63,7 +63,11 @@ namespace feedbackAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "feedbackAPI v1"));
             }
 
-            app.UseHttpsRedirection();
+            // no redirection with Docker
+            if (env.IsDevelopment())
+            {
+                app.UseHttpsRedirection();
+            }
 
             app.UseRouting();
 
