@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "my9mEpzUtQ5sT1p2e+BF/l5NYhuNjBuaCuFoz8zhkc64Pj/AVLBP9i//ftqzNCimOZrLMrJ40GUCS4Jmc1fJmg==",
+  "dgSpecHash": "45rjUgkrtEuHu7Dc/HQSoR7ppii/xm3zI7bebhkG4s++LcT4W1KgAIf7ST7PmAjRegmc0+1mcV4h7nZsIulcdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj",
+  "projectFilePath": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tomas\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\tomas\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

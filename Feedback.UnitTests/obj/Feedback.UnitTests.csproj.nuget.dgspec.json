@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.UnitTests\\Feedback.UnitTests.csproj": {}
+    "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.UnitTests\\Feedback.UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj": {
+    "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj",
+        "projectUniqueName": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj",
         "projectName": "Feedback.Api",
-        "projectPath": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj",
+        "projectPath": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj",
         "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\obj\\",
+        "outputPath": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.UnitTests\\Feedback.UnitTests.csproj": {
+    "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.UnitTests\\Feedback.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.UnitTests\\Feedback.UnitTests.csproj",
+        "projectUniqueName": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.UnitTests\\Feedback.UnitTests.csproj",
         "projectName": "Feedback.UnitTests",
-        "projectPath": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.UnitTests\\Feedback.UnitTests.csproj",
+        "projectPath": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.UnitTests\\Feedback.UnitTests.csproj",
         "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.UnitTests\\obj\\",
+        "outputPath": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -91,8 +91,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj": {
-                "projectPath": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj"
+              "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj": {
+                "projectPath": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj"
               }
             }
           }
@@ -107,6 +107,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.5.1, )"
+            },
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
               "version": "[6.0.0, )"

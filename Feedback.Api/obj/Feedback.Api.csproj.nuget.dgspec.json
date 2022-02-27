@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj": {}
+    "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj": {
+    "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj",
+        "projectUniqueName": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj",
         "projectName": "Feedback.Api",
-        "projectPath": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj",
+        "projectPath": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\Feedback.Api.csproj",
         "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\obj\\",
+        "outputPath": "c:\\Users\\tomas\\Documents\\setit\\feedbackAPI\\Feedback.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config"
