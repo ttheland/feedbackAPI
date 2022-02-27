@@ -14,3 +14,5 @@ Tested with Postman, unit testing using Xunit.
 
 This work is based on Julio Casal's wonderful [.NET 5 REST API Tutorial - Build From Scratch With C#](https://youtu.be/ZXdFisA_hOY)
 
+
+Next steps after implementing remaining API features would be to create a frontend. Here's an [example](https://github.com/ttheland/fullstackopen2020/tree/master/osa5/bloglist-frontend) API frontend using React.
